@@ -1302,19 +1302,34 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\#\{</string>
-					<key>captures</key>
+					<string>#\{</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.embedded.coffee</string>
+							<string>punctuation.section.embedded.begin.coffee</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>source.coffee</string>
 					<key>end</key>
-					<string>\}</string>
+					<string>(\})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.embedded.end.coffee</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>source.coffee</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>source.coffee.embedded.source</string>
+					<string>meta.embedded.line.coffee</string>
 					<key>patterns</key>
 					<array>
 						<dict>
