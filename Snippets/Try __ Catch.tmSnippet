@@ -4,9 +4,9 @@
 <dict>
 	<key>content</key>
 	<string>try
-  $1
+	$1
 catch ${2:error}
-  $3</string>
+	$3</string>
 	<key>name</key>
 	<string>Try .. Catch</string>
 	<key>scope</key>

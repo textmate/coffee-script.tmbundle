@@ -4,8 +4,8 @@
 <dict>
 	<key>content</key>
 	<string>switch ${1:object}
-  when ${2:value}
-    ${0:# body...}</string>
+	when ${2:value}
+		${0:# body...}</string>
 	<key>name</key>
 	<string>Switch</string>
 	<key>scope</key>

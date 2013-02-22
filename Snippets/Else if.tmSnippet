@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>else if ${1:condition}
-  ${0:# body...}</string>
+	${0:# body...}</string>
 	<key>name</key>
 	<string>Else if</string>
 	<key>scope</key>

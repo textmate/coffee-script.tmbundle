@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>for ${1:key}, ${2:value} of ${3:Object}
-  ${0:# body...}</string>
+	${0:# body...}</string>
 	<key>name</key>
 	<string>Object comprehension</string>
 	<key>scope</key>

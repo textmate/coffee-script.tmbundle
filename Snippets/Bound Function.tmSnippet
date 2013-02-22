@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>(${1:args}) =&gt;
-  ${0:# body...}</string>
+	${0:# body...}</string>
 	<key>name</key>
 	<string>Function (bound)</string>
 	<key>scope</key>
