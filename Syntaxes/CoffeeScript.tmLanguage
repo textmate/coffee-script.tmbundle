@@ -28,9 +28,79 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.coffee</string>
+					<string>punctuation.definition.parameters.begin.coffee</string>
 				</dict>
 				<key>2</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.parameter.function.coffee</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.separator.key-value.coffee</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>string.quoted.double.coffee</string>
+								</dict>
+								<key>4</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.coffee</string>
+								</dict>
+								<key>5</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.coffee</string>
+								</dict>
+								<key>6</key>
+								<dict>
+									<key>name</key>
+									<string>string.quoted.single.coffee</string>
+								</dict>
+								<key>7</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.coffee</string>
+								</dict>
+								<key>8</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.coffee</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([^()\s,]+)\s+(=)\s+(?:((")[^"]*("))|((')[^']*(')))</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>[^()\s,]+</string>
+							<key>name</key>
+							<string>variable.parameter.function.coffee</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>,</string>
+							<key>name</key>
+							<string>punctuation.separator.arguments.coffee</string>
+						</dict>
+					</array>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.coffee</string>
+				</dict>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>storage.type.function.coffee</string>
@@ -39,7 +109,7 @@
 			<key>comment</key>
 			<string>match stuff like: a -&gt; … </string>
 			<key>match</key>
-			<string>(\([^()]*?\))\s*([=-]&gt;)</string>
+			<string>(\()([^()]*?)(\))\s*([=-]&gt;)</string>
 			<key>name</key>
 			<string>meta.inline.function.coffee</string>
 		</dict>
@@ -325,12 +395,82 @@
 					<key>name</key>
 					<string>entity.name.function.coffee</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.coffee</string>
+					<string>punctuation.definition.parameters.begin.coffee</string>
 				</dict>
-				<key>5</key>
+				<key>6</key>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.parameter.function.coffee</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.separator.key-value.coffee</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>string.quoted.double.coffee</string>
+								</dict>
+								<key>4</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.coffee</string>
+								</dict>
+								<key>5</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.coffee</string>
+								</dict>
+								<key>6</key>
+								<dict>
+									<key>name</key>
+									<string>string.quoted.single.coffee</string>
+								</dict>
+								<key>7</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.begin.coffee</string>
+								</dict>
+								<key>8</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.end.coffee</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([^()\s,]+)\s+(=)\s+(?:((")[^"]*("))|((')[^']*(')))</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>[^()\s,]+</string>
+							<key>name</key>
+							<string>variable.parameter.function.coffee</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>,</string>
+							<key>name</key>
+							<string>punctuation.separator.arguments.coffee</string>
+						</dict>
+					</array>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.coffee</string>
+				</dict>
+				<key>8</key>
 				<dict>
 					<key>name</key>
 					<string>storage.type.function.coffee</string>
@@ -342,7 +482,7 @@
 				(?=@?[a-zA-Z\$_])
 				(
 					@?[a-zA-Z\$_](\w|\$|:|\.)*\s*
-					(?=[:=](\s*\(.*\))?\s*([=-]&gt;))
+					(?=[:=](\s*(\()(.*)(\)))?\s*([=-]&gt;))
 				)
 			</string>
 			<key>name</key>
