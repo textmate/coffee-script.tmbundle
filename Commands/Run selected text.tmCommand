@@ -5,9 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/bin/bash
-
-${TM_COFFEE:=coffee} -s
+	<string>#!/bin/sh
+exec "${TM_COFFEE:=coffee}" -s
 </string>
 	<key>input</key>
 	<string>selection</string>

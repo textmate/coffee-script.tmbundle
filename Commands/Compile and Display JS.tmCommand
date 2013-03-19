@@ -11,7 +11,7 @@ require "#{ENV['TM_SUPPORT_PATH']}/lib/tm/save_current_document"
 require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
 
 TextMate.save_if_untitled('cs')
-TextMate::Executor.run(e_sh(ENV['TM_COFFEE'] || 'coffee'), '-p', '--bare', ENV['TM_FILEPATH'])
+TextMate::Executor.run(e_sh(ENV['TM_COFFEE'] || 'coffee'), '-p', '--bare', ENV['TM_FILEPATH'], :verb =&gt; "Compiling")
 </string>
 	<key>fallbackInput</key>
 	<string>document</string>
