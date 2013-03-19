@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
+require "tempfile"
+
+tmp = Tempfile.new("selection_cs")
+tmp &lt;&lt; STDIN.read
+tmp.close
+TextMate::Executor.run(e_sh(ENV['TM_COFFEE'] || 'coffee'), '-p', '--bare', tmp.path, :verb =&gt; "Compiling", :noun =&gt; "selection")
+tmp.unlink
+</string>
+	<key>fallbackInput</key>
+	<string>document</string>
+	<key>hideFromUser</key>
+	<true/>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
+	<key>name</key>
+	<string>Compile and Display Selection</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>coffee</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/coffee</string>
+			</array>
+			<key>variable</key>
+			<string>TM_COFFEE</string>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>source.coffee dyn.selection</string>
+	<key>uuid</key>
+	<string>9A625AB5-11C9-447A-A255-2F6FB3F22011</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
