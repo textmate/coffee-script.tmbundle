@@ -7,10 +7,12 @@
 # ==============================================================================
 $0</string>
   <key>name</key>
-  <string>Subheader</string>
+  <string>Comment Header</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
   <string>/1</string>
+  <key>uuid</key>
+  <string>099276E4-DCF9-470B-9034-EFF7F0937560</string>
 </dict>
 </plist>
