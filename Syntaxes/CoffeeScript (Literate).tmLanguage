@@ -575,69 +575,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>double_quoted_string</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.coffee</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>"</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.coffee</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.double.coffee</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
-							<key>name</key>
-							<string>constant.character.escape.coffee</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#interpolated_coffee</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>embedded_comment</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.coffee</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(?&lt;!\\)(#).*$\n?</string>
-					<key>name</key>
-					<string>comment.line.number-sign.coffee</string>
-				</dict>
-			</array>
-		</dict>
 		<key>escape</key>
 		<dict>
 			<key>match</key>
@@ -869,62 +806,6 @@
 				<dict>
 					<key>include</key>
 					<string>#link-ref</string>
-				</dict>
-			</array>
-		</dict>
-		<key>instance_variable</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(@)([a-zA-Z_\$]\w*)?</string>
-					<key>name</key>
-					<string>variable.other.readwrite.instance.coffee</string>
-				</dict>
-			</array>
-		</dict>
-		<key>interpolated_coffee</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>#\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.begin.coffee</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>source.coffee</string>
-					<key>end</key>
-					<string>(\})</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.end.coffee</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>source.coffee</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.embedded.line.coffee</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>$self</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1317,18 +1198,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>numeric</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b</string>
-					<key>name</key>
-					<string>constant.numeric.coffee</string>
-				</dict>
-			</array>
-		</dict>
 		<key>raw</key>
 		<dict>
 			<key>captures</key>
@@ -1355,65 +1224,6 @@
 			<string>\G[ ]{0,3}([-*_])([ ]{0,2}\1){2,}[ \t]*$\n?</string>
 			<key>name</key>
 			<string>meta.separator.markdown</string>
-		</dict>
-		<key>single_quoted_string</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>'</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.coffee</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>'</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.coffee</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.single.coffee</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
-							<key>name</key>
-							<string>constant.character.escape.coffee</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>variable_name</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.assignment.coffee</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([a-zA-Z\$_]\w*(\.\w+)*)</string>
-					<key>name</key>
-					<string>variable.assignment.coffee</string>
-				</dict>
-			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
