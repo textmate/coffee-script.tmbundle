@@ -447,6 +447,44 @@
 			<string>keyword.operator.coffee</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>(?x)
+				\b
+				(?&lt;![\.\$])
+				(
+					  case
+                    | default
+                    | function
+                    | var
+                    | void
+                    | with
+                    | const
+                    | let
+                    | enum
+                    | export
+                    | import
+                    | native
+                    | __hasProp
+                    | __extends
+                    | __slice
+                    | __bind
+                    | __indexOf
+                    | implements
+                    | interface
+                    | package
+                    | private
+                    | protected
+                    | public
+                    | static
+                    | yield
+                )
+				(?!\s*:)
+				\b
+			</string>
+			<key>name</key>
+			<string>keyword.other.reserved.coffee</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
