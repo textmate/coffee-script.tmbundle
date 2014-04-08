@@ -441,7 +441,7 @@
 			  | \-=
 			  | &amp;=
 			  | \^=
-			  | \b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
+			  | \b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?!\\s*:)\b
 			</string>
 			<key>name</key>
 			<string>keyword.operator.coffee</string>
