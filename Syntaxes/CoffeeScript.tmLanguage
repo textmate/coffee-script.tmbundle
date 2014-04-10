@@ -521,10 +521,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?x)
-				(?&lt;=\s|^)
-				([\[\{])
-				(?=.*?[\]\}]\s+[:=])</string>
+			<string>(?&lt;=\s|^)(\{)(?=.+?\}\s+[:=])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -534,7 +531,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>([\]\}]\s*[:=])</string>
+			<string>(\}\s*[:=])</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -544,7 +541,54 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.variable.assignment.destructured.coffee</string>
+			<string>meta.variable.assignment.destructured.object.coffee</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#variable_name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#instance_variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single_quoted_string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double_quoted_string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#numeric</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?&lt;=\s|^)(\[)(?=.+?\]\s+[:=])</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.coffee</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\]\s*[:=])</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.coffee</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.variable.assignment.destructured.array.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>
