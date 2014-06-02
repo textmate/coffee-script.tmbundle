@@ -90,7 +90,13 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>([^()\s,]+)\s+(=)\s+(?:((")[^"]*("))|((')[^']*(')))</string>
+							<string>(?x)
+								([^()\s,]+)
+								\s+(=)\s+
+								(?:
+									((")[^"]*("))
+								  | ((')[^']*('))
+								)</string>
 						</dict>
 						<dict>
 							<key>match</key>
@@ -231,7 +237,16 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+					<string>(?x)
+						\\
+						(
+							x\h{2}
+						  | [0-2][0-7]{,2}
+						  | 3[0-6][0-7]
+						  | 37[0-7]?
+						  | [4-7][0-7]?
+						  | .
+						)</string>
 					<key>name</key>
 					<string>constant.character.escape.coffee</string>
 				</dict>
@@ -343,10 +358,34 @@
 		<dict>
 			<key>match</key>
 			<string>(?x)
-				\b(?&lt;![\.\$])(
-					break|by|catch|continue|else|finally|for|in|of|if|return|switch|
-					then|throw|try|unless|when|while|until|loop|do|(?&lt;=for)\s+own
-				)(?!\s*:)\b
+				\b
+				(?&lt;![\.\$])
+				(
+					break
+				  | by
+				  | catch
+				  | continue
+				  | else
+				  | finally
+				  | for
+				  | in
+				  | of
+				  | if
+				  | return
+				  | switch
+				  | then
+				  | throw
+				  | try
+				  | unless
+				  | when
+				  | while
+				  | until
+				  | loop
+				  | do
+				  | (?&lt;=for)\s+own
+				)
+				(?!\s*:)
+				\b
 			</string>
 			<key>name</key>
 			<string>keyword.control.coffee</string>
@@ -354,9 +393,44 @@
 		<dict>
 			<key>match</key>
 			<string>(?x)
-				and=|or=|!|%|&amp;|\^|\*|\/|(\-)?\-(?!&gt;)|\+\+|\+|~|==|=(?!&gt;)|!=|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|
-				&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\.\.(\.)?|\?|\||\|\||\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|
-				\^=|\b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
+				and=
+			  | or=
+			  | !
+			  | %
+			  | &amp;
+			  | \^
+			  | \*
+			  | \/
+			  | (\-)?\-(?!&gt;)
+			  | \+\+
+			  | \+
+			  | ~
+			  | ==
+			  | =(?!&gt;)
+			  | !=
+			  | &lt;=
+			  | &gt;=
+			  | &lt;&lt;=
+			  | &gt;&gt;=
+			  | &gt;&gt;&gt;=
+			  | &lt;&gt;
+			  | &lt;
+			  | &gt;
+			  | !
+			  | &amp;&amp;
+			  | \.\.(\.)?
+			  | \?
+			  | \|
+			  | \|\|
+			  | \:
+			  | \*=
+			  | (?&lt;!\()/=
+			  | %=
+			  | \+=
+			  | \-=
+			  | &amp;=
+			  | \^=
+			  | \b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
 			</string>
 			<key>name</key>
 			<string>keyword.operator.coffee</string>
@@ -381,13 +455,29 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>([a-zA-Z\$_](\w|\$|\.)*\s*(?!\::)((:)|(=)(?!&gt;))(?!(\s*\(.*\))?\s*([=-]&gt;)))</string>
+			<string>(?x)
+				(
+					[a-zA-Z\$_](\w|\$|\.)*
+					\s*
+					(?!\::)
+					((:)|(=)(?!&gt;))
+					(?!
+						(
+							\s*\(.*\)
+						)?
+						\s*
+						([=-]&gt;)
+					)
+				)</string>
 			<key>name</key>
 			<string>variable.assignment.coffee</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=\s|^)([\[\{])(?=.*?[\]\}]\s+[:=])</string>
+			<string>(?x)
+				(?&lt;=\s|^)
+				([\[\{])
+				(?=.*?[\]\}]\s+[:=])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -499,7 +589,13 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>([^()\s,]+)\s+(=)\s+(?:((")[^"]*("))|((')[^']*(')))</string>
+							<string>(?x)
+								([^()\s,]+)
+								\s+(=)\s+
+								(?:
+									((")[^"]*("))
+								  | ((')[^']*('))
+								)</string>
 						</dict>
 						<dict>
 							<key>match</key>
@@ -531,8 +627,14 @@
 				(?&lt;=^|\s)
 				(?=@?[a-zA-Z\$_])
 				(
-					@?[a-zA-Z\$_](\w|\$|:|\.)*\s*
-					(?=[:=](\s*(\()(.*)(\)))?\s*([=-]&gt;))
+					@?[a-zA-Z\$_](\w|\$|:|\.)*
+					\s*
+					(?=
+						[:=]
+						(\s*(\()(.*)(\)))?
+						\s*
+						([=-]&gt;)
+					)
 				)
 			</string>
 			<key>name</key>
@@ -546,25 +648,45 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?&lt;!\.)(true|on|yes)(?!\s*[:=])\b</string>
+			<string>(?x)
+				\b
+				(?&lt;!\.)
+				(true|on|yes)
+				(?!\s*[:=])
+				\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.true.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?&lt;!\.)(false|off|no)(?!\s*[:=])\b</string>
+			<string>(?x)
+				\b
+				(?&lt;!\.)
+				(false|off|no)
+				(?!\s*[:=])
+				\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.false.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?&lt;!\.)null(?!\s*[:=])\b</string>
+			<string>(?x)
+				\b
+				(?&lt;!\.)
+				null
+				(?!\s*[:=])
+				\b</string>
 			<key>name</key>
 			<string>constant.language.null.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?&lt;!\.)(this|extends)(?!\s*[:=])\b</string>
+			<string>(?x)
+				\b
+				(?&lt;!\.)
+				(this|extends)
+				(?!\s*[:=])
+				\b</string>
 			<key>name</key>
 			<string>variable.language.coffee</string>
 		</dict>
@@ -588,7 +710,12 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(class\b)(?:\s+(extends)\s+(@?[a-zA-Z\$\._][\w\.]*))</string>
+			<string>(?x)
+					(class\b)
+					(?:
+						\s+(extends)\s+
+						(@?[a-zA-Z\$\._][\w\.]*)
+					)</string>
 			<key>name</key>
 			<string>meta.class.coffee</string>
 		</dict>
@@ -617,7 +744,14 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(class\b)\s+(@?[a-zA-Z\$_][\w\.]*)?(?:\s+(extends)\s+(@?[a-zA-Z\$\._][\w\.]*))?</string>
+			<string>(?x)
+					(class\b)
+					\s+
+					(@?[a-zA-Z\$_][\w\.]*)?
+					(?:
+						\s+(extends)\s+
+						(@?[a-zA-Z\$\._][\w\.]*)
+					)?</string>
 			<key>name</key>
 			<string>meta.class.coffee</string>
 		</dict>
@@ -629,12 +763,29 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)\b(
-				Array|ArrayBuffer|Blob|Boolean|Date|document|Function|
-				Int(8|16|32|64)Array|Math|Map|Number|
-				Object|Proxy|RegExp|Set|String|WeakMap|
-				window|Uint(8|16|32|64)Array|XMLHttpRequest
-			)\b</string>
+			<string>(?x)
+				\b(
+					Array
+				  | ArrayBuffer
+				  | Blob
+				  | Boolean
+				  | Date
+				  | document
+				  | Function
+				  | Int(8|16|32|64)Array
+				  | Math
+				  | Map
+				  | Number
+				  | Object
+				  | Proxy
+				  | RegExp
+				  | Set
+				  | String
+				  | WeakMap
+				  | window
+				  | Uint(8|16|32|64)Array
+				  | XMLHttpRequest
+				)\b</string>
 			<key>name</key>
 			<string>support.class.coffee</string>
 		</dict>
@@ -652,56 +803,135 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)\b(
-				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require
-			)\b</string>
+			<string>(?x)
+				\b(
+					decodeURI(Component)?
+				  | encodeURI(Component)?
+				  | eval
+				  | parse(Float|Int)
+				  | require
+				)\b</string>
 			<key>name</key>
 			<string>support.function.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=\.)(
-				apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|
-				isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|
-				reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|
-				unshift|valueOf
-			))\b</string>
+			<string>(?x)
+				(
+					(?&lt;=\.)
+					(
+						apply
+					  | call
+					  | concat
+					  | every
+					  | filter
+					  | forEach
+					  | from
+					  | hasOwnProperty
+					  | indexOf
+					  | isPrototypeOf
+					  | join
+					  | lastIndexOf
+					  | map
+					  | of
+					  | pop
+					  | propertyIsEnumerable
+					  | push
+					  | reduce(Right)?
+					  | reverse
+					  | shift
+					  | slice
+					  | some
+					  | sort
+					  | splice
+					  | to(Locale)?String
+					  | unshift
+					  | valueOf
+					)
+				)\b</string>
 			<key>name</key>
 			<string>support.function.method.array.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=Array\.)(
-				isArray
-			))\b</string>
+			<string>((?&lt;=Array\.)(isArray))\b</string>
 			<key>name</key>
 			<string>support.function.static.array.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=Object\.)(
-				create|definePropert(ies|y)|freeze|getOwnProperty(Descriptors?|Names)|
-				getProperty(Descriptor|Names)|getPrototypeOf|is(Extensible|Frozen|Sealed)?|
-				isnt|keys|preventExtensions|seal
-			))\b</string>
+			<string>(?x)
+				(
+					(?&lt;=Object\.)
+					(
+						create
+					  | definePropert(ies|y)
+					  | freeze
+					  | getOwnProperty(Descriptors?|Names)
+					  | getProperty(Descriptor|Names)
+					  | getPrototypeOf
+					  | is(Extensible|Frozen|Sealed)?
+					  | isnt
+					  | keys
+					  | preventExtensions
+					  | seal
+					)
+				)\b</string>
 			<key>name</key>
 			<string>support.function.static.object.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=Math\.)(
-				abs|acos|acosh|asin|asinh|atan|atan2|atanh|ceil|cos|cosh|exp|expm1|floor|
-				hypot|log|log10|log1p|log2|max|min|pow|random|round|sign|sin|sinh|sqrt|
-				tan|tanh|trunc
-			))\b</string>
+			<string>(?x)
+				(
+					(?&lt;=Math\.)
+					(
+						abs
+					  | acos
+					  | acosh
+					  | asin
+					  | asinh
+					  | atan
+					  | atan2
+					  | atanh
+					  | ceil
+					  | cos
+					  | cosh
+					  | exp
+					  | expm1
+					  | floor
+					  | hypot
+					  | log
+					  | log10
+					  | log1p
+					  | log2
+					  | max
+					  | min
+					  | pow
+					  | random
+					  | round
+					  | sign
+					  | sin
+					  | sinh
+					  | sqrt
+					  | tan
+					  | tanh
+					  | trunc
+					)
+				)\b</string>
 			<key>name</key>
 			<string>support.function.static.math.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=Number\.)(
-				is(Finite|Integer|NaN)|toInteger
-			))\b</string>
+			<string>(?x)
+				(
+					(?&lt;=Number\.)
+					(
+						is(Finite|Integer|NaN)
+					  | toInteger
+					)
+				)\b</string>
 			<key>name</key>
 			<string>support.function.static.number.coffee</string>
 		</dict>
@@ -797,7 +1027,15 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+							<string>(?x)
+								\\(
+									x\h{2}
+								  | [0-2][0-7]{,2}
+								  | 3[0-6][0-7]
+								  | 37[0-7]?
+								  | [4-7][0-7]?
+								  | .
+								)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
 						</dict>
@@ -891,7 +1129,12 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b</string>
+					<string>(?x)
+						(?&lt;!\$)\b
+						(
+							(0([box])[0-9a-fA-F]+)
+						  | ([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?)
+						)\b</string>
 					<key>name</key>
 					<string>constant.numeric.coffee</string>
 				</dict>
@@ -928,7 +1171,15 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
+							<string>(?x)
+								\\(
+									x\h{2}
+								  | [0-2][0-7]{,2}
+								  | 3[0-6][0-7]?
+								  | 37[0-7]?
+								  | [4-7][0-7]?
+								  | .
+								)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
 						</dict>
