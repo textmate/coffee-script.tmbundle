@@ -142,14 +142,24 @@
 					<key>name</key>
 					<string>keyword.operator.new.coffee</string>
 				</dict>
-				<key>2</key>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.class.coffee</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.instance.coffee</string>
+				</dict>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.type.instance.coffee</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(new)\s+(\w+(?:\.\w*)*)</string>
+			<string>(new)\s+(((class)(\s+(\w+(?:\.\w*)*))?)|(\w+(?:\.\w*)*))</string>
 			<key>name</key>
 			<string>meta.class.instance.constructor</string>
 		</dict>
