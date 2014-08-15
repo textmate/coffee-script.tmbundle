@@ -292,7 +292,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>@\w*</string>
+					<string>(?&lt;=^|\s)@\w*(?=\s)</string>
 					<key>name</key>
 					<string>storage.type.annotation.coffeescript</string>
 				</dict>
