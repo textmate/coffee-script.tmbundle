@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/bin/bash
+[[ -z "$TM_FILEPATH" ]] &amp;&amp; TM_TMPFILE=$(mktemp -t coffeeScriptInTerm)
+: "${TM_FILEPATH:=$TM_TMPFILE}"; cat &gt;"$TM_FILEPATH"
+
+TCS=${TM_COFFEE:-coffee}
+
+esc () {
+STR="$1" ruby18 &lt;&lt;"RUBY"
+   str = ENV['STR']
+   str = str.gsub(/'/, "'\\\\''")
+   str = str.gsub(/[\\"]/, '\\\\\\0')
+   print "'#{str}'"
+RUBY
+}
+
+osascript &lt;&lt;- APPLESCRIPT
+	tell app "Terminal"
+	    launch
+	    activate
+	    do script "clear; cd $(esc "${TM_DIRECTORY}"); $(esc "${TCS}") $(esc "${TM_FILEPATH}"); rm -f $(esc "${TM_TMPFILE}")"
+	    set position of first window to { 100, 100 }
+	end tell
+APPLESCRIPT
+
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^@r</string>
+	<key>name</key>
+	<string>Run (Terminal)</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.coffee</string>
+	<key>semanticClass</key>
+	<string>process.external.run.script.coffee</string>
+	<key>uuid</key>
+	<string>51274A0F-82E2-4F1A-9434-875481425643</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
