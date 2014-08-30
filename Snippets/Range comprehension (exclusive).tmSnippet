@@ -6,7 +6,7 @@
 	<string>for ${1:name} in [${2:start}...${3:finish}]${4: by ${5:step}}
 	${0:# body...}</string>
 	<key>name</key>
-	<string>Range comprehension (exclusive)</string>
+	<string>Range Comprehension (Exclusive)</string>
 	<key>scope</key>
 	<string>source.coffee</string>
 	<key>tabTrigger</key>

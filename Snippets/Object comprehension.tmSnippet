@@ -6,7 +6,7 @@
 	<string>for ${1:key}, ${2:value} of ${3:Object}
 	${0:# body...}</string>
 	<key>name</key>
-	<string>Object comprehension</string>
+	<string>Object Comprehension</string>
 	<key>scope</key>
 	<string>source.coffee</string>
 	<key>tabTrigger</key>

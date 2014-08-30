@@ -6,7 +6,7 @@
 	<string>else if ${1:condition}
 	${0:# body...}</string>
 	<key>name</key>
-	<string>Else if</string>
+	<string>Else If</string>
 	<key>scope</key>
 	<string>source.coffee</string>
 	<key>tabTrigger</key>
