@@ -486,6 +486,7 @@
                     | protected
                     | public
                     | static
+                    | this
                     | yield
                 )
 				(?!\s*:)
@@ -780,7 +781,7 @@
 			<string>(?x)
 				\b
 				(?&lt;!\.)
-				(this|extends)
+				(extends)
 				(?!\s*[:=])
 				\b</string>
 			<key>name</key>
