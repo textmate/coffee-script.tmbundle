@@ -486,7 +486,6 @@
                     | protected
                     | public
                     | static
-                    | this
                     | yield
                 )
 				(?!\s*:)
@@ -786,6 +785,12 @@
 				\b</string>
 			<key>name</key>
 			<string>variable.language.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?&lt;!\.)this(?!\s*[:=])\b</string>
+			<key>name</key>
+			<string>variable.language.this.coffee</string>
 		</dict>
 		<dict>
 			<key>captures</key>
