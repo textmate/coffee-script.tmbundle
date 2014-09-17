@@ -746,7 +746,7 @@
 			<key>match</key>
 			<string>(?x)
 				\b
-				(?&lt;!\.)
+				(?&lt;!\.|::)
 				(true|on|yes)
 				(?!\s*[:=])
 				\b</string>
@@ -757,7 +757,7 @@
 			<key>match</key>
 			<string>(?x)
 				\b
-				(?&lt;!\.)
+				(?&lt;!\.|::)
 				(false|off|no)
 				(?!\s*[:=])
 				\b</string>
@@ -768,7 +768,7 @@
 			<key>match</key>
 			<string>(?x)
 				\b
-				(?&lt;!\.)
+				(?&lt;!\.|::)
 				null
 				(?!\s*[:=])
 				\b</string>
@@ -779,7 +779,7 @@
 			<key>match</key>
 			<string>(?x)
 				\b
-				(?&lt;!\.)
+				(?&lt;!\.|::)
 				(extends)
 				(?!\s*[:=])
 				\b</string>
