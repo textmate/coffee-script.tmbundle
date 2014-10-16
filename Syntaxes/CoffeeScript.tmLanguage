@@ -748,7 +748,7 @@
 				\b
 				(?&lt;!\.|::)
 				(true|on|yes)
-				(?!\s*[:=])
+				(?!\s*[:=][^=])
 				\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.true.coffee</string>
@@ -759,7 +759,7 @@
 				\b
 				(?&lt;!\.|::)
 				(false|off|no)
-				(?!\s*[:=])
+				(?!\s*[:=][^=])
 				\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.false.coffee</string>
@@ -770,7 +770,7 @@
 				\b
 				(?&lt;!\.|::)
 				null
-				(?!\s*[:=])
+				(?!\s*[:=][^=])
 				\b</string>
 			<key>name</key>
 			<string>constant.language.null.coffee</string>
@@ -781,7 +781,7 @@
 				\b
 				(?&lt;!\.|::)
 				(extends)
-				(?!\s*[:=])
+				(?!\s*[:=][^=])
 				\b</string>
 			<key>name</key>
 			<string>variable.language.coffee</string>
