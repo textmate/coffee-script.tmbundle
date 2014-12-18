@@ -63,9 +63,9 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)^
-				(?=	[ ]{,3}&gt;.
+				(?=	[ ]{0,3}&gt;.
 				|	[#]{1,6}\s*+
-				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+				|	[ ]{0,3}(?&lt;marker&gt;[-*_])([ ]{0,2}\k&lt;marker&gt;){2,}[ \t]*+$
 				)</string>
 			<key>comment</key>
 			<string>
@@ -75,9 +75,9 @@
 			</string>
 			<key>end</key>
 			<string>(?x)^
-				(?!	[ ]{,3}&gt;.
+				(?!	[ ]{0,3}&gt;.
 				|	[#]{1,6}\s*+
-				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+				|	[ ]{0,3}(?&lt;marker&gt;[-*_])([ ]{0,2}\k&lt;marker&gt;){2,}[ \t]*+$
 				)</string>
 			<key>name</key>
 			<string>meta.block-level.markdown</string>
@@ -269,7 +269,7 @@
 			<key>begin</key>
 			<string>^(?=\S)(?![=-]{3,}(?=$))</string>
 			<key>end</key>
-			<string>^(?:\s*$|(?=[ ]{,3}&gt;.))|(?=[ \t]*\n)(?&lt;=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)</string>
+			<string>^(?:\s*$|(?=[ ]{0,3}&gt;.))|(?=[ \t]*\n)(?&lt;=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)</string>
 			<key>name</key>
 			<string>meta.paragraph.markdown</string>
 			<key>patterns</key>
@@ -330,7 +330,7 @@
 		<key>block_quote</key>
 		<dict>
 			<key>begin</key>
-			<string>\G[ ]{,3}(&gt;)(?!$)[ ]?</string>
+			<string>\G[ ]{0,3}(&gt;)(?!$)[ ]?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -348,8 +348,8 @@
 			<key>end</key>
 			<string>(?x)^
 				(?=	\s*$
-				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
-				|	[ ]{,3}&gt;.
+				|	[ ]{0,3}(?&lt;marker&gt;[-*_])([ ]{0,2}\k&lt;marker&gt;){2,}[ \t]*+$
+				|	[ ]{0,3}&gt;.
 				)</string>
 			<key>name</key>
 			<string>markup.quote.markdown</string>
@@ -358,7 +358,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)\G
-						(?=	[ ]{,3}&gt;.
+						(?=	[ ]{0,3}&gt;.
 						)</string>
 					<key>end</key>
 					<string>^</string>
@@ -377,7 +377,7 @@
 					<string>(?x)\G
 						(?=	([ ]{4}|\t)
 						|	[#]{1,6}\s*+
-						|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+						|	[ ]{0,3}(?&lt;marker&gt;[-*_])([ ]{0,2}\k&lt;marker&gt;){2,}[ \t]*+$
 						)</string>
 					<key>end</key>
 					<string>^</string>
@@ -401,10 +401,10 @@
 					<key>begin</key>
 					<string>(?x)\G
 						(?!	$
-						|	[ ]{,3}&gt;.
+						|	[ ]{0,3}&gt;.
 						|	([ ]{4}|\t)
 						|	[#]{1,6}\s*+
-						|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+						|	[ ]{0,3}(?&lt;marker&gt;[-*_])([ ]{0,2}\k&lt;marker&gt;){2,}[ \t]*+$
 						)</string>
 					<key>end</key>
 					<string>$|(?&lt;=\n)</string>
@@ -767,7 +767,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+							<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
 						</dict>
@@ -1236,7 +1236,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+							<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
 						</dict>
@@ -1982,7 +1982,7 @@
 		<key>separator</key>
 		<dict>
 			<key>match</key>
-			<string>\G[ ]{,3}([-*_])([ ]{,2}\1){2,}[ \t]*$\n?</string>
+			<string>\G[ ]{0,3}([-*_])([ ]{0,2}\1){2,}[ \t]*$\n?</string>
 			<key>name</key>
 			<string>meta.separator.markdown</string>
 		</dict>
@@ -2017,7 +2017,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
+							<string>\\(x\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
 						</dict>
