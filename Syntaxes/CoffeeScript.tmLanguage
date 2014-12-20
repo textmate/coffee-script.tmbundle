@@ -441,7 +441,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.assignment.coffee</string>
+					<string>variable.other.assignment.coffee</string>
 				</dict>
 				<key>4</key>
 				<dict>
@@ -456,8 +456,8 @@
 			</dict>
 			<key>match</key>
 			<string>(?x)
-				(
-					[a-zA-Z\$_](\w|\$|\.)*
+				(?:
+					([a-zA-Z\$_](\w|\$|\.)*)
 					\s*
 					(?!\::)
 					((:)|(=)(?!&gt;))
@@ -469,8 +469,6 @@
 						([=-]&gt;)
 					)
 				)</string>
-			<key>name</key>
-			<string>variable.assignment.coffee</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -1192,18 +1190,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.assignment.coffee</string>
-						</dict>
-					</dict>
 					<key>match</key>
 					<string>([a-zA-Z\$_]\w*(\.\w+)*)</string>
 					<key>name</key>
-					<string>variable.assignment.coffee</string>
+					<string>variable.other.assignment.coffee</string>
 				</dict>
 			</array>
 		</dict>
