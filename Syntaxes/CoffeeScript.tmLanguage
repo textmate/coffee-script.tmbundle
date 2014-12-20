@@ -171,7 +171,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.heredoc.coffee</string>
+			<string>string.unquoted.heredoc.coffee</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -232,7 +232,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.script.coffee</string>
+			<string>string.interpolated.javascript.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>
