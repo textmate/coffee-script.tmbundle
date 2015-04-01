@@ -8,11 +8,21 @@
 	<string>source.coffee -(source.coffee string)</string>
 	<key>settings</key>
 	<dict>
+		<key>foldingStartMarker</key>
+		<string>(?x)
+    ^.*\B\s*[=:,]?\s* \[ (?!.*\])(?=.|$) # multiline array open bracket
+    </string>
+		<key>foldingStopMarker</key>
+		<string>(?x)
+                ^ \s* \] $               # multiline array closing bracket
+    </string>
 		<key>foldingIndentedBlockStart</key>
 		<string>(?x)
-	\b class \b |           # class definition
-	[=-]&gt; \s* (\#.*)? $     # line-ending function arrow
-  </string>
+    ( \b class \b            # class definition
+    |   ( [=-]&gt;           # line-ending function arrow
+        | \b \w+:            # object nesting
+        ) \s* (\# .*)? $     # (optional trailing comment)
+    )</string>
 	</dict>
 	<key>uuid</key>
 	<string>A6FC6CDA-1572-4D42-A8F0-D96048D49873</string>
