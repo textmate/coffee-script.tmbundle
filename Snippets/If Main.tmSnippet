@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>main = -&gt;
+	${1:# body...}
+do main if require.main is module</string>
+	<key>name</key>
+	<string>If Main</string>
+	<key>tabTrigger</key>
+	<string>ifmain</string>
+	<key>uuid</key>
+	<string>B6720481-069E-4225-859A-DBDE54457157</string>
+</dict>
+</plist>
