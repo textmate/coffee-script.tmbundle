@@ -414,44 +414,17 @@
 		<dict>
 			<key>match</key>
 			<string>(?x)
-				and=
-			  | or=
-			  | !
-			  | %
-			  | &amp;
-			  | \^
-			  | \*
-			  | \/
-			  | (\-)?\-(?!&gt;)
-			  | \+\+
-			  | \+
-			  | ~
-			  | ==
-			  | =(?!&gt;)
-			  | !=
-			  | &lt;=
-			  | &gt;=
-			  | &lt;&lt;=
-			  | &gt;&gt;=
-			  | &gt;&gt;&gt;=
-			  | &lt;&gt;
-			  | &lt;
-			  | &gt;
-			  | !
-			  | &amp;&amp;
-			  | \.\.(\.)?
-			  | \?
-			  | \|
-			  | \|\|
-			  | \:
-			  | \*=
-			  | (?&lt;!\()/=
-			  | %=
-			  | \+=
-			  | \-=
-			  | &amp;=
-			  | \^=
-			  | \b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?!\\s*:)\b
+                  (and|or|&lt;&lt;|&gt;&gt;&gt;?|(?&lt;!\()\/|[=!&lt;&gt;*%+\-&amp;^])?=(?!&gt;)
+                | [!%^*\/~?:]
+                | \-?\-(?!&gt;)
+                | \+\+?
+                | &lt;&gt;
+                | &lt;
+                | &gt;
+                | &amp;&amp;?
+                | \.\.\.?
+                | \|\|?
+                | \b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?!\s*:)\b
 			</string>
 			<key>name</key>
 			<string>keyword.operator.coffee</string>
@@ -735,6 +708,12 @@
 			</string>
 			<key>name</key>
 			<string>meta.function.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>@?\b(?!class|subclass|extends|decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require)\w+(\s+(?!(of|in|then|is|isnt|and|or|for|else|when|not|if)\s)(?=(\w+|\-&gt;|\-\d|\[|\{|"|'))|(?=\())</string>
+			<key>name</key>
+			<string>entity.name.function.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
