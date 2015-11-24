@@ -711,7 +711,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>@?\b(?!class|subclass|extends|decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require)\w+(\s+(?!(of|in|then|is|isnt|and|or|for|else|when|not|if)\s)(?=(\w+|\-&gt;|\-\d|\[|\{|"|'))|(?=\())</string>
+			<string>@?\b(?!class|subclass|extends|decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require)\w+(\s+(?!(of|in|then|is|isnt|and|or|for|else|when|not|if)\s)(?=(@?\w+|\-&gt;|\-\d|\[|\{|"|'))|(?=\())</string>
 			<key>name</key>
 			<string>entity.name.function.coffee</string>
 		</dict>
