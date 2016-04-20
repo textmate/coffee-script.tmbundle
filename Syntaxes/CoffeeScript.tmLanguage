@@ -1049,7 +1049,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>,[ |\t]*</string>
+			<string>,</string>
 			<key>name</key>
 			<string>meta.delimiter.object.comma.coffee</string>
 		</dict>
