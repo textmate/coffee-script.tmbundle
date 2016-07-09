@@ -13,7 +13,7 @@
 		<key>increaseIndentPattern</key>
 		<string>(?x)
 		^\s*
-		(.*\bclass(\s|$)
+		(.*\b(?&lt;!\.)class(\s|$)
 		|[a-zA-Z\$_](\w|\$|:|\.)*\s*(?=\:(\s*\(.*\))?\s*((=|-)&gt;\s*$)) # function that is not one line
 		|[a-zA-Z\$_](\w|\$|\.)*\s*(:|=)\s*((if|while)(?!.*?then)|for|$) # assignment using multiline if/while/for
 		|\b(if|else|unless|while|when)\b(?!.*?then)|\b(for|loop)\b
