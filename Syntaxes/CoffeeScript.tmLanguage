@@ -216,43 +216,50 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>`</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.coffee</string>
-				</dict>
-			</dict>
+			<string>(?=`)</string>
 			<key>end</key>
-			<string>`</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.coffee</string>
-				</dict>
-			</dict>
+			<string>(?&lt;=`)</string>
 			<key>name</key>
-			<string>string.interpolated.javascript.coffee</string>
+			<string>meta.embedded.line.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>(?x)
-						\\
-						(
-							x\h{2}
-						  | [0-2][0-7]{0,2}
-						  | 3[0-6][0-7]
-						  | 37[0-7]?
-						  | [4-7][0-7]?
-						  | .
-						)</string>
+					<key>begin</key>
+					<string>`</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.coffee</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>source.js</string>
+					<key>end</key>
+					<string>(`)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.coffee</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>source.js</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>constant.character.escape.coffee</string>
+					<string>string.other.embedded.javascript.coffee</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.js</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
