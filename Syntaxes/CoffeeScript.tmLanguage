@@ -9,6 +9,10 @@
 		<string>coffee</string>
 		<string>Cakefile</string>
 		<string>coffee.erb</string>
+		<string>cake</string>
+		<string>cjsx</string>
+		<string>cson</string>
+		<string>iced</string>
 	</array>
 	<key>injections</key>
 	<dict>
