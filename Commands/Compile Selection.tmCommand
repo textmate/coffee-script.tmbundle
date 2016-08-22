@@ -41,10 +41,20 @@ tmp.unlink
 			<string>coffee</string>
 			<key>locations</key>
 			<array>
+				<string>/usr/local/bin/coffee</string>
 				<string>/opt/local/bin/coffee</string>
 			</array>
 			<key>variable</key>
 			<string>TM_COFFEE</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>node</string>
+			<key>locations</key>
+			<array>
+				<string>/usr/local/bin/node</string>
+				<string>/opt/local/bin/node</string>
+			</array>
 		</dict>
 	</array>
 	<key>scope</key>

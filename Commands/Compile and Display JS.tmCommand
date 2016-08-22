@@ -32,7 +32,17 @@ TextMate::Executor.run(e_sh(ENV['TM_COFFEE'] || 'coffee'), '-p', '--bare', ENV['
 			<string>TM_COFFEE</string>
 			<key>locations</key>
 			<array>
+				<string>/usr/local/bin/coffee</string>
 				<string>/opt/local/bin/coffee</string>
+			</array>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>node</string>
+			<key>locations</key>
+			<array>
+				<string>/usr/local/bin/node</string>
+				<string>/opt/local/bin/node</string>
 			</array>
 		</dict>
 	</array>
