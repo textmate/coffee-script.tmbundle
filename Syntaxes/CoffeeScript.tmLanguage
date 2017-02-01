@@ -399,10 +399,12 @@
 				\b
 				(?&lt;![\.\$])
 				(
-					break
+				    await
+				  | break
 				  | by
 				  | catch
 				  | continue
+				  | defer
 				  | else
 				  | finally
 				  | for
